@@ -1,4 +1,9 @@
-#the simple bash script code to create incremental backups of your WordPress site and MySQL database.
+
+
+`the simple bash script code to create incremental backups of your WordPress site and MySQL database.`
+
+
+#BACKUP
 
 ```
 
@@ -37,16 +42,16 @@ rsync -avz ${LOCAL_BACKUP_DIR}/${DATABASE}_binlog_${TIMESTAMP}.log ${BACKUP_SERV
 
 
 ```
-# Remember to enable binary logging in your MySQL server 
-# if its not already enabled. 
-# You can do this by adding log-bin=mysql-bin in your MySQL configuration file.
+ `Remember to enable binary logging in your MySQL server 
+ if its not already enabled. 
+ You can do this by adding log-bin=mysql-bin in your MySQL configuration file.`
 
 
 ...
 
-
-#  bash script that you can use to restore your WordPress site and MySQL database
-#  from the backups created by the previous script
+# RESTORE
+`bash script that you can use to restore your WordPress site and MySQL database
+ from the backups created by the previous script`
 
 ```
 
