@@ -3,7 +3,7 @@
 `the simple bash script code to create incremental backups of your WordPress site and MySQL database.`
 
 
-#BACKUP
+# BACKUP
 
 ```
 
