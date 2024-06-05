@@ -1,6 +1,6 @@
 ## ssh monitoring
-send ssh login notif via telegram and email
+Send SSH Login Notifications via Telegram and Email
 
-edit the variables and enjoy
+Edit the variables and enjoy!
 
-this script use swaks & inotify-tools
+This script uses swaks & inotify-tools.
