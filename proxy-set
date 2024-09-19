@@ -5,7 +5,7 @@ read -p "Enter the proxy IP: " PROXY_IP
 read -p "Enter the proxy port: " PROXY_PORT
 
 # Define the proxy URL
-PROXY_URL="http://$PROXY_IP:$PROXY_PORT"
+export PROXY_URL="http://$PROXY_IP:$PROXY_PORT"
 
 # Export the proxy settings for the current session
 export http_proxy=$PROXY_URL
@@ -14,9 +14,10 @@ export ftp_proxy=$PROXY_URL
 export no_proxy="localhost,127.0.0.1"
 
 # Optionally, write these to your shell profile to persist them (e.g., ~/.bashrc or ~/.zshrc)
-echo "export http_proxy=$PROXY_URL" >> ~/.bashrc
-echo "export https_proxy=$PROXY_URL" >> ~/.bashrc
-echo "export ftp_proxy=$PROXY_URL" >> ~/.bashrc
+echo "export PROXY_URL=$PROXY_URL" >> ~/.bashrc
+echo "export http_proxy=\$PROXY_URL" >> ~/.bashrc
+echo "export https_proxy=\$PROXY_URL" >> ~/.bashrc
+echo "export ftp_proxy=\$PROXY_URL" >> ~/.bashrc
 echo "export no_proxy=localhost,127.0.0.1" >> ~/.bashrc
 
 # Docker-specific proxy setup
@@ -26,8 +27,8 @@ sudo mkdir -p $DOCKER_CONFIG
 # Create a proxy configuration file for Docker
 cat <<EOF | sudo tee $DOCKER_CONFIG/http-proxy.conf
 [Service]
-Environment="HTTP_PROXY=$PROXY_URL"
-Environment="HTTPS_PROXY=$PROXY_URL"
+Environment="HTTP_PROXY=\$PROXY_URL"
+Environment="HTTPS_PROXY=\$PROXY_URL"
 Environment="NO_PROXY=localhost,127.0.0.1"
 EOF
 
