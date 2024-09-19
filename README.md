@@ -8,5 +8,7 @@ This script uses swaks & inotify-tools.
 
 ## proxy-set
 ```
-curl -s  https://raw.githubusercontent.com/rezamontazeri76/scripts/main/proxy-set | bash
+curl -s  https://raw.githubusercontent.com/rezamontazeri76/scripts/main/proxy-set
+chmod +x proxy-set
+./proxy-set
 ```
