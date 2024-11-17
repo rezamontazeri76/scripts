@@ -16,7 +16,8 @@ This tool monitors SSH login attempts and alerts via Telegram and email. It is d
 ## Setup Instructions
 
 ```
-git clone https://github.com/yourusername/ssh-monitor.git
+git clone https://github.com/rezamontazeri76/scripts.git
+cd SSH Monitoring Tool
 docker-compose up --build -d
 
 ```
