@@ -1,0 +1,10 @@
+services:
+  ssh-monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/log/auth.log:/var/log/auth.log
+    env_file:
+      - .env
+    restart: unless-stopped
